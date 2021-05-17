@@ -26,7 +26,7 @@ hi Boolean ctermfg=208
 hi Float ctermfg=208
 
 " Variable Name
-hi Identifier ctermfg=182
+hi Identifier ctermfg=182 cterm=none
 hi Function ctermfg=39
 hi Member ctermfg=36
 hi Variable ctermfg=15
@@ -114,7 +114,7 @@ hi CursorLineNr ctermfg=249 ctermbg=237
 
 " Search
 hi Search ctermfg=215 ctermbg=none cterm=underline
-hi IncSearch ctermfg=231 ctermbg=168
+hi IncSearch ctermfg=215 ctermbg=none cterm=underline
 
 " Diff Mode
 hi DiffAdd ctermfg=16 ctermbg=149

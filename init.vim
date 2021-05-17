@@ -10,11 +10,13 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 
 " IDE plugins
+Plug 'airblade/vim-rooter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim' " Adds utilities for fzf in vim
 Plug 'zefei/vim-wintabs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    "coc-settings.json configured for extensions: (use CocInstall <extension>)
-    " * coc-rust-analyzer
+    " coc-settings.json configured for extensions:
+    "  - coc-rust-analyzer
 
 " Syntax language support
 Plug 'elzr/vim-json'
@@ -48,6 +50,10 @@ set updatetime=300                "Longer time reduce the user experience
 set cmdheight=1                   "Space to displaying messages
 set shortmess+=c                  "Don't give ins-completion-menu messages
 set hlsearch                      "Highlight the search
+
+" User 'rg' as grep program: https://github.com/BurntSushi/ripgrep/
+set grepprg=rg\ --no-heading\ --vimgrep
+set grepformat=%f:%l:%c:%m
 
 " Highlight the language syntax
 syntax on
@@ -98,9 +104,11 @@ nnoremap <leader><leader> <C-^>
 " Disable the highlighted search
 nnoremap <silent>B :nohlsearch<Bar>:echo<CR>
 
-"=================================================
-"                FILE TYPE CONFIG
-"-------------------------------------------------
+" Helper to identify the highlight group under the cursor
+map <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
 " 2-size tab for web developing
 autocmd FileType html,pug,javascript,css,sass,vue,html.handlebars setlocal sw=2 ts=2
 
@@ -110,8 +118,25 @@ autocmd FileType html,pug,javascript,css,sass,vue,html.handlebars setlocal sw=2 
 
 "-------------------------------------------------
 " # fzf
-nnoremap <C-F> :FZF<CR>
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'   "Use ag instead of grep
+nnoremap <C-S> :FZF<CR>
+
+" Search file (based of jonhoo's config)
+noremap <leader>s :Rg<space>
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
+function! s:list_cmd()
+  let base = fnamemodify(expand('%'), ':h:.:S')
+  return base == '.' ? 'fd --type file --follow' : printf('fd --type file --follow | proximity-sort %s', shellescape(expand('%')))
+endfunction
+
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, {'source': s:list_cmd(),
+  \                               'options': '--tiebreak=index'}, <bang>0)
 
 "-------------------------------------------------
 " # vim-wintabs
@@ -184,9 +209,6 @@ nmap <silent> gr <Plug>(coc-references)
 
 " Find symbol of current document
 nnoremap <silent> <leader>o :CocList outline<cr>
-
-" Find symbol in workspace
-nnoremap <silent> <space>s :CocList -I symbols<cr>
 
 " Implement methods for trait
 nnoremap <silent> <space>i :call CocActionAsync('codeAction', '', 'Implement missing members')<cr>
