@@ -80,7 +80,7 @@ map L $
 
 " Highlight the language syntax
 syntax on
-colo texor
+colo lemunozm
 
 " Disable the highlighted search
 nnoremap <silent>B :nohlsearch<Bar>:echo<CR>
