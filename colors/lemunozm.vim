@@ -11,64 +11,63 @@ if exists("syntax_on")
     syntax reset
 endif
 
-let g:colors_name="texor"
+let g:colors_name="lemunozm"
 
 " Main
-hi Normal ctermfg=15 ctermbg=232 cterm=none
-hi Comment ctermfg=243 cterm=none
-let g:ophigh_color=246
+hi Normal ctermfg=15 ctermbg=232
+hi Comment ctermfg=243
 
 " Constant
-hi Constant ctermfg=34 cterm=none guifg=#FFFFAF gui=none
-hi String ctermfg=229 cterm=none guifg=#D7D7AF gui=none
-hi Character ctermfg=208 cterm=none guifg=#D7D7AF gui=none
-hi Number ctermfg=208 cterm=none guifg=#D7AF87 gui=none
-hi Boolean ctermfg=208 cterm=none guifg=#D7D7AF gui=none
-hi Float ctermfg=208 cterm=none guifg=#D7AF87 gui=none
+hi Constant ctermfg=34
+hi String ctermfg=229
+hi Character ctermfg=208
+hi Number ctermfg=208
+hi Boolean ctermfg=208
+hi Float ctermfg=208
 
 " Variable Name
-hi Identifier ctermfg=182 cterm=none guifg=#D7AFD7 gui=none
-hi Function ctermfg=39 cterm=none guifg=#D7AFD7 gui=none
+hi Identifier ctermfg=182
+hi Function ctermfg=39
 hi Member ctermfg=36
 hi Variable ctermfg=15
 hi Namespace ctermfg=98
 
 " Statement
-hi Statement ctermfg=165 cterm=none guifg=#87AFD7 gui=none
-hi Conditional ctermfg=220 cterm=none guifg=#87AFD7 gui=none
-hi Repeat ctermfg=220 cterm=none guifg=#87AFD7 gui=none
-hi Label ctermfg=39 cterm=none guifg=#87AFD7 gui=none
-hi Operator ctermfg=246 cterm=none guifg=#87AFD7 gui=none
-hi Keyword ctermfg=165 cterm=none guifg=#87AFD7 gui=none
-hi Exception ctermfg=165 cterm=none guifg=#87AFD7 gui=none
+hi Statement ctermfg=165
+hi Conditional ctermfg=220
+hi Repeat ctermfg=220
+hi Label ctermfg=39
+hi Operator ctermfg=246
+hi Keyword ctermfg=165
+hi Exception ctermfg=165
 hi FunctionDecl ctermfg=39
 hi cLabel ctermfg=165
 
 " Preprocessor
-hi PreProc ctermfg=34 cterm=none guifg=#AFD787 gui=none
-hi Include ctermfg=34 cterm=none guifg=#AFD787 gui=none
-hi Define ctermfg=34 cterm=none guifg=#AFD787 gui=none
-hi Macro ctermfg=34 cterm=none guifg=#AFD787 gui=none
-hi PreCondit ctermfg=34 cterm=none guifg=#AFD787 gui=none
+hi PreProc ctermfg=34
+hi Include ctermfg=34
+hi Define ctermfg=34
+hi Macro ctermfg=34
+hi PreCondit ctermfg=34
 
 " Type
-hi Type ctermfg=99 cterm=none guifg=#AFAFD7 gui=none
-hi StorageClass ctermfg=165 cterm=none guifg=#AFAFD7 gui=none
-hi Structure ctermfg=165 cterm=none guifg=#AFAFD7 gui=none
-hi Typedef ctermfg=165 cterm=none guifg=#AFAFD7 gui=none
+hi Type ctermfg=99
+hi StorageClass ctermfg=165
+hi Structure ctermfg=165
+hi Typedef ctermfg=165
 hi cppModifier ctermfg=165
 
 " Special
-hi Special ctermfg=174 cterm=none guifg=#D78787 gui=none
-hi SpecialChar ctermfg=174 cterm=none guifg=#D78787 gui=none
-hi Tag ctermfg=174 cterm=none guifg=#D78787 gui=none
-hi Delimiter ctermfg=174 cterm=none guifg=#D78787 gui=none
-hi SpecialComment ctermfg=174 cterm=none guifg=#D78787 gui=none
-hi Debug ctermfg=174 cterm=none guifg=#D78787 gui=none
-hi Underlined ctermfg=249 cterm=underline guifg=#B2B2B2 gui=underline
-hi Ignore ctermfg=235 cterm=none guifg=#262626 gui=none
-hi Error ctermfg=231 ctermbg=167 cterm=none guifg=#FFFFFF guibg=#D75F5F gui=none
-hi Todo ctermfg=243 cterm=bold guifg=#000000 ctermbg=345 guibg=#dfdf00 gui=none
+hi Special ctermfg=174
+hi SpecialChar ctermfg=174
+hi Tag ctermfg=174
+hi Delimiter ctermfg=174
+hi SpecialComment ctermfg=174
+hi Debug ctermfg=174
+hi Underlined ctermfg=249
+hi Ignore ctermfg=235
+hi Error ctermfg=231 ctermbg=167
+hi Todo ctermfg=243 cterm=bold ctermbg=345
 
 " Window
 hi StatusLine ctermfg=231 ctermbg=237 cterm=none
@@ -89,15 +88,15 @@ hi WildMenu ctermfg=232 ctermbg=98 cterm=none
 hi CocFloating ctermbg=234
 
 " Selection
-hi Visual ctermfg=235 ctermbg=117 cterm=none
-hi VisualNOS ctermfg=235 ctermbg=80 cterm=none
+hi Visual ctermfg=235 ctermbg=117
+hi VisualNOS ctermfg=235 ctermbg=80
 
 " Message
-hi ErrorMsg ctermfg=210 cterm=none
-hi WarningMsg ctermfg=140 cterm=none
-hi MoreMsg ctermfg=72 cterm=none
+hi ErrorMsg ctermfg=210
+hi WarningMsg ctermfg=140
+hi MoreMsg ctermfg=72
 hi ModeMsg ctermfg=222 cterm=bold
-hi Question ctermfg=38 cterm=none
+hi Question ctermfg=38
 
 " Mark
 hi Folded ctermfg=244

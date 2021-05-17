@@ -12,7 +12,9 @@ Plug 'Yggdroot/indentLine'
 " IDE plugins
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'zefei/vim-wintabs'
-Plug 'neoclide/coc.nvim', {'branch': 'release'} "Then run once => :CocInstall coc-json coc-tsserver
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    "coc-settings.json configured for extensions: (use CocInstall <extension>)
+    " * coc-rust-analyzer
 
 " Syntax language support
 Plug 'elzr/vim-json'
@@ -90,6 +92,9 @@ nnoremap <silent> p p`]
 map H ^
 map L $
 
+" Swap buffer"
+nnoremap <leader><leader> <C-^>
+
 " Disable the highlighted search
 nnoremap <silent>B :nohlsearch<Bar>:echo<CR>
 
@@ -114,19 +119,19 @@ map <C-H> <Plug>(wintabs_previous)
 imap <C-H> <ESC><Plug>(wintabs_previous)
 map <C-L> <Plug>(wintabs_next)
 imap <C-L> <ESC><Plug>(wintabs_next)
-map <C-W> <Plug>(wintabs_close)
+map <C-C> <Plug>(wintabs_close)
 map <C-T> <Plug>(wintabs_undo)
 map <C-N> <Plug>(wintabs_move_left) 1
 map <C-M> <Plug>(wintabs_move_right) 1
-map <M-1> :WintabsGo 1<CR>
-map <M-2> :WintabsGo 2<CR>
-map <M-3> :WintabsGo 3<CR>
-map <M-4> :WintabsGo 4<CR>
-map <M-5> :WintabsGo 5<CR>
-map <M-6> :WintabsGo 6<CR>
-map <M-7> :WintabsGo 7<CR>
-map <M-8> :WintabsGo 8<CR>
-map <M-9> :WintabsGo 9<CR>
+map <leader>1 :WintabsGo 1<CR>
+map <leader>2 :WintabsGo 2<CR>
+map <leader>3 :WintabsGo 3<CR>
+map <leader>4 :WintabsGo 4<CR>
+map <leader>5 :WintabsGo 5<CR>
+map <leader>6 :WintabsGo 6<CR>
+map <leader>7 :WintabsGo 7<CR>
+map <leader>8 :WintabsGo 8<CR>
+map <leader>9 :WintabsGo 9<CR>
 let g:wintabs_ui_sep_leftmost = ''
 let g:wintabs_ui_sep_inbetween = ''
 let g:wintabs_ui_sep_rightmost = ''
