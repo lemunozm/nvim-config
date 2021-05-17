@@ -13,7 +13,7 @@ If you want *rust* support:
 
 ## Installation:
 
-1. Copy the `nvim` folder into `.config/`
+1. Clone the repo: `git clone https://github.com/lemunozm/nvim-config.git .config/nvim`
 2. Open *nvim* and execute `:PlugInstall`
 3. Reset *nvim*
 
