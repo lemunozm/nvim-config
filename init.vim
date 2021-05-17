@@ -1,7 +1,7 @@
 
-"-------------------------------------------------
+"=================================================
 "                    PLUGINS
-"-------------------------------------------------
+"=================================================
 call plug#begin(stdpath('data') . '/plugged')
 
 " Visual plugins
@@ -20,7 +20,6 @@ Plug 'aklt/plantuml-syntax'
 Plug 'godlygeek/tabular' "required for vim-markdown
 Plug 'plasticboy/vim-markdown'
 Plug 'pboettch/vim-cmake-syntax'
-"Plug 'https://github.com/lemunozm/rust.vim.git' "fork of
 Plug 'rust-lang/rust.vim'
 
 " Utilities
@@ -30,9 +29,9 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 " Initialize plugin system
 call plug#end()
 
-"-------------------------------------------------
+"=================================================
 "                 GENENAL CONFIG
-"-------------------------------------------------
+"=================================================
 " Sets
 set number                        "Show the line numbers
 set expandtab                     "Convert tab to space
@@ -40,22 +39,35 @@ set tabstop=4                     "Number of space write by a tab
 set shiftwidth=4                  "Number of identation spaces (automatic identantion read this)
 set autoread                      "Refresh files that havent been edited by vim
 set hidden                        "Allows open tabs without safe the current one.
+set noswapfile                    "No generate swap files
 set nobackup
 set nowritebackup
 set updatetime=300                "Longer time reduce the user experience
-set cmdheight=2                   "More space to displaying messages
+set cmdheight=1                   "Space to displaying messages
 set shortmess+=c                  "Don't give ins-completion-menu messages
 set hlsearch                      "Highlight the search
 
-let mapleader = "\<space>"        "Leader key as <space>
+" Highlight the language syntax
+syntax on
+colo lemunozm
 
-" Remove mappings
+" Remove all whitespaces after save
+autocmd BufWritePre * :%s/\s\+$//e
+
+"Leader key as space
+let mapleader = "\<space>"
+
+" Remove mappings (force to use vim keys)
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
 
-" Esc shortcut
+" Esc shortcut (faster than Esc)
 inoremap jj <ESC>
 
 " Faster save
@@ -78,30 +90,26 @@ nnoremap <silent> p p`]
 map H ^
 map L $
 
-" Highlight the language syntax
-syntax on
-colo lemunozm
-
 " Disable the highlighted search
 nnoremap <silent>B :nohlsearch<Bar>:echo<CR>
 
-" Remove all whitespaces after save
-autocmd BufWritePre * :%s/\s\+$//e
-
-"-------------------------------------------------
+"=================================================
 "                FILE TYPE CONFIG
 "-------------------------------------------------
 " 2-size tab for web developing
 autocmd FileType html,pug,javascript,css,sass,vue,html.handlebars setlocal sw=2 ts=2
 
-"-------------------------------------------------
+"=================================================
 "                 PLUGIN CONFIG
+"=================================================
+
 "-------------------------------------------------
-" fzf
+" # fzf
 nnoremap <C-F> :FZF<CR>
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'   "Use ag instead of grep
 
-" vim-wintabs
+"-------------------------------------------------
+" # vim-wintabs
 map <C-H> <Plug>(wintabs_previous)
 imap <C-H> <ESC><Plug>(wintabs_previous)
 map <C-L> <Plug>(wintabs_next)
@@ -123,32 +131,83 @@ let g:wintabs_ui_sep_leftmost = ''
 let g:wintabs_ui_sep_inbetween = ''
 let g:wintabs_ui_sep_rightmost = ''
 
-" intentLine
+"-------------------------------------------------
+" # intentLine
 let g:indentLine_char = '┆'
 let g:indentLine_color_term = 234
 
-" vim-json
+"-------------------------------------------------
+" # vim-json
 let g:vim_json_syntax_conceal = 0   "Disable conceal for json
 
-" vim-markdown
+"-------------------------------------------------
+" # vim-markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
 
-" rust.vim
+"-------------------------------------------------
+" # rust.vim
 let g:rustfmt_autosave = 1
 autocmd Filetype rust map <F8> :RustTest <CR>
 
-" coc.nvim
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+"-------------------------------------------------
+" # coc.nvim
 
+" Trigger completion and move down in the navigation
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-inoremap <silent><expr> <c-space> coc#refresh()
+" Move up/down in the navigation
+inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Navigate diagnostic mappings
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo mappings
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Find symbol of current document
+nnoremap <silent> <leader>o :CocList outline<cr>
+
+" Find symbol in workspace
+nnoremap <silent> <space>s :CocList -I symbols<cr>
+
+" Implement methods for trait
+nnoremap <silent> <space>i :call CocActionAsync('codeAction', '', 'Implement missing members')<cr>
+
+" Show actions available at this location
+nnoremap <silent> <space>a :CocAction<cr>
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+" Mappings for scrolling the coc windows
+nnoremap <silent><nowait><expr> <C-d> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-d>"
+nnoremap <silent><nowait><expr> <C-u> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-u>"
+inoremap <silent><nowait><expr> <C-d> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <silent><nowait><expr> <C-u> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+vnoremap <silent><nowait><expr> <C-d> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-d>"
+vnoremap <silent><nowait><expr> <C-u> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-u>"

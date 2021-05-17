@@ -1,4 +1,6 @@
 {
     "rust-analyzer.server.path": "/home/luis/.local/bin/rust-analyzer",
-    "rust-analyzer.diagnostics.enable": false
+    "rust-analyzer.diagnostics.enable": false,
+    "rust-analyzer.inlayHints.typeHints": false,
+    "rust-analyzer.completion.postfix.enable": false
 }

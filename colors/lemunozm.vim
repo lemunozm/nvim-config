@@ -85,6 +85,9 @@ hi PmenuSbar ctermbg=59 cterm=none
 hi PmenuThumb ctermbg=246 cterm=none
 hi WildMenu ctermfg=232 ctermbg=98 cterm=none
 
+" Coc plugin
+hi CocFloating ctermbg=234
+
 " Selection
 hi Visual ctermfg=235 ctermbg=117 cterm=none
 hi VisualNOS ctermfg=235 ctermbg=80 cterm=none
@@ -97,28 +100,28 @@ hi ModeMsg ctermfg=222 cterm=bold
 hi Question ctermfg=38 cterm=none
 
 " Mark
-hi Folded ctermfg=244 cterm=none
-hi FoldColumn ctermfg=79 ctermbg=233 cterm=none
-hi SignColumn ctermfg=184 ctermbg=233 cterm=none
-hi ColorColumn ctermbg=233 cterm=none
-hi LineNr ctermfg=254 ctermbg=234 cterm=none
+hi Folded ctermfg=244
+hi FoldColumn ctermfg=79 ctermbg=233
+hi SignColumn ctermfg=184 ctermbg=233
+hi ColorColumn ctermbg=233
+hi LineNr ctermfg=254 ctermbg=234
 
-hi MatchParen ctermfg=252 ctermbg=240 cterm=none
+hi MatchParen ctermfg=252 ctermbg=240
 
 " Cursor
-hi CursorColumn ctermbg=237 cterm=none
-hi CursorLine ctermbg=237 cterm=none
-hi CursorLineNr ctermfg=249 ctermbg=237 cterm=none
+hi CursorColumn ctermbg=237
+hi CursorLine ctermbg=237
+hi CursorLineNr ctermfg=249 ctermbg=237
 
 " Search
 hi Search ctermfg=215 ctermbg=none cterm=underline
-hi IncSearch ctermfg=231 ctermbg=168 cterm=none
+hi IncSearch ctermfg=231 ctermbg=168
 
 " Diff Mode
-hi DiffAdd ctermfg=16 ctermbg=149 cterm=none
-hi DiffChange ctermfg=16 ctermbg=217 cterm=none
+hi DiffAdd ctermfg=16 ctermbg=149
+hi DiffChange ctermfg=16 ctermbg=217
 hi DiffText ctermfg=16 ctermbg=211 cterm=bold
-hi DiffDelete ctermfg=16 ctermbg=249 cterm=none
+hi DiffDelete ctermfg=16 ctermbg=249
 
 " Spell
 hi SpellBad ctermfg=217 ctermbg=bg cterm=underline
@@ -127,45 +130,45 @@ hi SpellRare ctermfg=168 ctermbg=bg cterm=underline
 hi SpellLocal ctermfg=98 ctermbg=bg cterm=underline
 
 " Misc
-hi SpecialKey ctermfg=114 cterm=none
-hi NonText ctermfg=234 cterm=none
-hi Directory ctermfg=103 cterm=none
-hi Title ctermfg=109 cterm=none
-hi Conceal ctermfg=77 cterm=none
-hi Noise ctermfg=247 cterm=none
-hi helpHyperTextJump ctermfg=74 cterm=none
-hi perlSharpBang ctermfg=244 cterm=none
-hi rubySharpBang ctermfg=244 cterm=none
-hi jsFuncCall ctermfg=116 cterm=none
+hi SpecialKey ctermfg=114
+hi NonText ctermfg=234
+hi Directory ctermfg=103
+hi Title ctermfg=109
+hi Conceal ctermfg=77
+hi Noise ctermfg=247
+hi helpHyperTextJump ctermfg=74
+hi perlSharpBang ctermfg=244
+hi rubySharpBang ctermfg=244
+hi jsFuncCall ctermfg=116
 
 " Html
-hi javaScriptNumber ctermfg=179 cterm=none
-hi htmlTag ctermfg=147 cterm=none
-hi htmlEndTag ctermfg=147 cterm=none
-hi htmlTagName ctermfg=175 cterm=none
-hi htmlString ctermfg=187 cterm=none
+hi javaScriptNumber ctermfg=179
+hi htmlTag ctermfg=147
+hi htmlEndTag ctermfg=147
+hi htmlTagName ctermfg=175
+hi htmlString ctermfg=187
 
 " Vim
-hi vimFold ctermfg=244 cterm=none
-hi vimCommentTitle ctermfg=249 cterm=none
+hi vimFold ctermfg=244
+hi vimCommentTitle ctermfg=249
 
 " Diff File
-hi diffFile ctermfg=244 cterm=none guifg=#808080 gui=none
-hi diffLine ctermfg=186 cterm=none guifg=#D7D787 gui=none
-hi diffAdded ctermfg=107 cterm=none guifg=#87AF5F gui=none
-hi diffRemoved ctermfg=175 cterm=none guifg=#D787AF gui=none
-hi diffChanged ctermfg=179 cterm=none guifg=#D7AF5F gui=none
-hi diffSubname ctermfg=252 cterm=none guifg=#D0D0D0 gui=none
-hi diffOldLine ctermfg=104 cterm=none guifg=#8787D7 gui=none
+hi diffFile ctermfg=244
+hi diffLine ctermfg=186
+hi diffAdded ctermfg=107
+hi diffRemoved ctermfg=175
+hi diffChanged ctermfg=179
+hi diffSubname ctermfg=252
+hi diffOldLine ctermfg=104
 
 " Mail
-hi mailSubject ctermfg=109 cterm=none
-hi mailSignature ctermfg=244 cterm=none
+hi mailSubject ctermfg=109
+hi mailSignature ctermfg=244
 
 " Markdown
-hi markdownCode ctermfg=244 cterm=none guifg=#808080 gui=none
-hi markdownCodeBlock ctermfg=244 cterm=none guifg=#808080 gui=none
-hi markdownItalic ctermfg=252 cterm=none guifg=#D0D0D0 gui=none
+hi markdownCode ctermfg=244
+hi markdownCodeBlock ctermfg=244
+hi markdownItalic ctermfg=252
 
 " C
 hi def link cStatement Conditional
