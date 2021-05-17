@@ -4,6 +4,7 @@
 ## Prerequisites:
 (in order to work without touching any configuration in `init.vim`)
 
+- [`yarn`](https://yarnpkg.com/) package manager.
 - [`rg`](https://github.com/BurntSushi/ripgrep/) installed in the PATH.
 - [`fzf`](https://github.com/junegunn/fzf) installed in `~/fzf` (and updated).
 

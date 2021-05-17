@@ -119,6 +119,7 @@ autocmd FileType html,pug,javascript,css,sass,vue,html.handlebars setlocal sw=2 
 "-------------------------------------------------
 " # fzf
 nnoremap <C-S> :FZF<CR>
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'   "Use ag instead of grep
 
 " Search file (based of jonhoo's config)
 noremap <leader>s :Rg<space>
