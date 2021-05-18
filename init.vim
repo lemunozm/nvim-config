@@ -18,6 +18,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Syntax language support
 Plug 'elzr/vim-json'
+Plug 'cespare/vim-toml'
 Plug 'aklt/plantuml-syntax'
 Plug 'godlygeek/tabular' "required for vim-markdown
 Plug 'plasticboy/vim-markdown'
@@ -184,7 +185,7 @@ autocmd Filetype rust map <F8> :RustTest <CR>
 " # coc.nvim
 
 " Extensions
-let g:coc_global_extensions = ['coc-json', 'coc-rust-analyzer']
+let g:coc_global_extensions = ['coc-json', 'coc-rust-analyzer', 'coc-cmake', 'coc-clangd']
 
 " Trigger completion and move down in the navigation
 inoremap <silent><expr> <Tab>

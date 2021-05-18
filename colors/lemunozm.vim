@@ -171,6 +171,7 @@ hi markdownItalic ctermfg=252
 
 " C
 hi def link cStatement Conditional
+hi def link cppFunction Function
 
 " Go
 hi goFunction ctermfg=110
