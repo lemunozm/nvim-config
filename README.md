@@ -17,8 +17,3 @@ If you want *rust* support:
 1. Clone the repo: `git clone https://github.com/lemunozm/nvim-config.git .config/nvim`
 2. Open *nvim* and execute `:PlugInstall`
 3. Reset *nvim*
-
-If you want *rust* support:
-
-4. Execute: `:CocInstall coc-rust-analyzer` **(optional)**
-

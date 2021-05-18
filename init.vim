@@ -15,8 +15,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim' " Adds utilities for fzf in vim
 Plug 'zefei/vim-wintabs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " coc-settings.json configured for extensions:
-    "  - coc-rust-analyzer
 
 " Syntax language support
 Plug 'elzr/vim-json'
@@ -184,6 +182,9 @@ autocmd Filetype rust map <F8> :RustTest <CR>
 
 "-------------------------------------------------
 " # coc.nvim
+
+" Extensions
+let g:coc_global_extensions = ['coc-json', 'coc-rust-analyzer']
 
 " Trigger completion and move down in the navigation
 inoremap <silent><expr> <Tab>
