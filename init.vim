@@ -120,8 +120,9 @@ autocmd FileType html,pug,javascript,css,sass,vue,html.handlebars setlocal sw=2 
 nnoremap <C-S> :FZF<CR>
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'   "Use ag instead of grep
 
+noremap <leader>s :Rg <C-R><C-W><CR>
+
 " Search file (based of jonhoo's config)
-noremap <leader>s :Rg<space>
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
