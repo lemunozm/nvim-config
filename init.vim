@@ -100,6 +100,9 @@ map L $
 " Swap buffer"
 nnoremap <leader><leader> <C-^>
 
+" Faster last command"
+nnoremap <leader>r @:
+
 " Disable the highlighted search
 nnoremap <silent>B :nohlsearch<Bar>:echo<CR>
 
@@ -120,7 +123,8 @@ autocmd FileType html,pug,javascript,css,sass,vue,html.handlebars setlocal sw=2 
 nnoremap <C-S> :FZF<CR>
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'   "Use ag instead of grep
 
-noremap <leader>s :Rg <C-R><C-W><CR>
+" Search the current word and save it in the history
+noremap <leader>s :let cmd = "Rg <C-R><C-W>" <bar> :call histadd("cmd", cmd) <bar> :execute cmd<CR>
 
 " Search file (based of jonhoo's config)
 command! -bang -nargs=* Rg
