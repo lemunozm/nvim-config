@@ -18,18 +18,19 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'godlygeek/tabular' "required for vim-markdown
 
 " Syntax language support
+Plug 'nathanalderson/yang.vim'
 Plug 'elzr/vim-json'
 Plug 'cespare/vim-toml'
 Plug 'aklt/plantuml-syntax'
 Plug 'plasticboy/vim-markdown'
 Plug 'pboettch/vim-cmake-syntax'
 Plug 'rust-lang/rust.vim'
-Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 " Utilities
 Plug 'mattn/webapi-vim' "Used by :RustPlay
 Plug 'tyru/open-browser.vim' "Used by :PlantumlOpen
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'iamcco/markdown-preview.nvim'
 Plug 'weirongxu/plantuml-previewer.vim'
 
 " Initialize plugin system
@@ -63,7 +64,15 @@ syntax on
 colo lemunozm
 
 " Remove all whitespaces after save
-autocmd BufWritePre * :%s/\s\+$//e
+" autocmd BufWritePre * :%s/\s\+$//e "disabled in e2c to avoid add extra git diffs
+
+" Final spaces highlight
+highlight ExtraWhitespace ctermbg=52
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
 "Leader key as space
 let mapleader = "\<space>"
