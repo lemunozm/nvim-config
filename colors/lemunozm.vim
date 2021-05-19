@@ -1,6 +1,6 @@
 " Lemunozm 256 Dark
 "  Author: Luis Enrique Muñoz
-"     URL: https://github.com/lemunozm/
+"     URL: https://github.com/lemunozm/nvim-config/colors/lemunozm.vim
 " Created: 2017
 " Version: 0.1
 "
@@ -171,7 +171,6 @@ hi markdownItalic ctermfg=252
 
 " C
 hi def link cStatement Conditional
-hi def link cppFunction Function
 
 " Go
 hi goFunction ctermfg=110

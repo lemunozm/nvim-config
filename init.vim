@@ -24,6 +24,7 @@ Plug 'godlygeek/tabular' "required for vim-markdown
 Plug 'plasticboy/vim-markdown'
 Plug 'pboettch/vim-cmake-syntax'
 Plug 'rust-lang/rust.vim'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 " Utilities
 Plug 'mattn/webapi-vim' "Used by :RustPlay
