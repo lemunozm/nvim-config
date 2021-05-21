@@ -154,8 +154,8 @@ map <C-L> <Plug>(wintabs_next)
 imap <C-L> <ESC><Plug>(wintabs_next)
 map <C-C> <Plug>(wintabs_close)
 map <C-T> <Plug>(wintabs_undo)
-map <C-N> <Plug>(wintabs_move_left) 1
-map <C-M> <Plug>(wintabs_move_right) 1
+map <C-N> :WintabsMove -1<CR>
+map <C-M> :WintabsMove 1<CR>
 map <leader>1 :WintabsGo 1<CR>
 map <leader>2 :WintabsGo 2<CR>
 map <leader>3 :WintabsGo 3<CR>
