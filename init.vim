@@ -15,12 +15,12 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim' " Adds utilities for fzf in vim
 Plug 'zefei/vim-wintabs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'godlygeek/tabular' "required for vim-markdown
 
 " Syntax language support
 Plug 'elzr/vim-json'
 Plug 'cespare/vim-toml'
 Plug 'aklt/plantuml-syntax'
-Plug 'godlygeek/tabular' "required for vim-markdown
 Plug 'plasticboy/vim-markdown'
 Plug 'pboettch/vim-cmake-syntax'
 Plug 'rust-lang/rust.vim'
@@ -28,7 +28,9 @@ Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 " Utilities
 Plug 'mattn/webapi-vim' "Used by :RustPlay
+Plug 'tyru/open-browser.vim' "Used by :PlantumlOpen
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'weirongxu/plantuml-previewer.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -192,6 +194,9 @@ autocmd Filetype rust map <F8> :RustTest <CR>
 
 " Extensions
 let g:coc_global_extensions = ['coc-json', 'coc-rust-analyzer', 'coc-cmake', 'coc-clangd']
+
+" Disable fade out color
+autocmd Filetype rust hi clear CocFadeOut
 
 " Trigger completion and move down in the navigation
 inoremap <silent><expr> <Tab>
