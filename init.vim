@@ -8,6 +8,7 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
+Plug 'guns/xterm-color-table.vim'
 
 " IDE plugins
 Plug 'airblade/vim-rooter'
@@ -226,10 +227,13 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> <leader>o :CocList outline<cr>
 
 " Implement methods for trait
-nnoremap <silent> <space>i :call CocActionAsync('codeAction', '', 'Implement missing members')<cr>
+nnoremap <silent> <leader>i :call CocActionAsync('codeAction', '', 'Implement missing members')<cr>
 
 " Show actions available at this location
-nnoremap <silent> <space>a :CocAction<cr>
+nnoremap <silent> <leader>a :CocAction<cr>
+
+" Auto fix
+nmap <leader>f <Plug>(coc-fix-current)
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)

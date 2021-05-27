@@ -88,7 +88,7 @@ hi WildMenu ctermfg=232 ctermbg=98 cterm=none
 hi CocFloating ctermbg=234
 
 " Selection
-hi Visual ctermfg=235 ctermbg=117
+hi Visual ctermfg=none ctermbg=236
 hi VisualNOS ctermfg=235 ctermbg=80
 
 " Message
