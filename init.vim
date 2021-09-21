@@ -2,7 +2,7 @@
 "=================================================
 "                    PLUGINS
 "=================================================
-call plug#begin(stdpath('data') . '/plugged')
+call plug#begin(stdpath('data') . '/plugged') " Plugins stored in ~/.local/share/nvim/plugged
 
 " Visual plugins
 Plug 'vim-airline/vim-airline'
@@ -15,8 +15,9 @@ Plug 'airblade/vim-rooter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim' " Adds utilities for fzf in vim
 Plug 'zefei/vim-wintabs'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'godlygeek/tabular' "required for vim-markdown
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'iamcco/coc-flutter', {'do': 'npm install'}
 
 " Syntax language support
 Plug 'elzr/vim-json'
@@ -26,6 +27,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'pboettch/vim-cmake-syntax'
 Plug 'rust-lang/rust.vim'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'dart-lang/dart-vim-plugin'
 
 " Utilities
 Plug 'mattn/webapi-vim' "Used by :RustPlay
@@ -116,8 +118,8 @@ map <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
-" 2-size tab for web developing
-autocmd FileType html,pug,javascript,css,sass,vue,html.handlebars setlocal sw=2 ts=2
+" 2-size tab for other languages
+autocmd FileType html,pug,javascript,css,sass,vue,html.handlebars,dart setlocal sw=2 ts=2
 
 "=================================================
 "                 PLUGIN CONFIG
