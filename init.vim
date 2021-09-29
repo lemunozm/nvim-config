@@ -119,7 +119,7 @@ map <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " 2-size tab for other languages
-autocmd FileType html,pug,javascript,css,sass,vue,html.handlebars,dart setlocal sw=2 ts=2
+autocmd FileType html,pug,javascript,css,sass,vue,html.handlebars,dart,yaml setlocal sw=2 ts=2
 
 "=================================================
 "                 PLUGIN CONFIG
