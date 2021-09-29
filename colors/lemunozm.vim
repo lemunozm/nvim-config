@@ -117,10 +117,10 @@ hi Search ctermfg=215 ctermbg=none cterm=underline
 hi IncSearch ctermfg=215 ctermbg=none cterm=underline
 
 " Diff Mode
-hi DiffAdd ctermfg=16 ctermbg=149
-hi DiffChange ctermfg=16 ctermbg=217
-hi DiffText ctermfg=16 ctermbg=211 cterm=bold
-hi DiffDelete ctermfg=16 ctermbg=249
+hi DiffAdd ctermfg=83 ctermbg=233
+hi DiffChange ctermfg=185 ctermbg=233
+hi DiffText ctermfg=185 ctermbg=233 cterm=bold
+hi DiffDelete ctermfg=167 ctermbg=233
 
 " Spell
 hi SpellBad ctermfg=217 ctermbg=bg cterm=underline

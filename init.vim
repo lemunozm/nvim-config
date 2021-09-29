@@ -9,6 +9,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 Plug 'guns/xterm-color-table.vim'
+"Plug 'mhinz/vim-signify' It's cool but... really I need it?
 
 " IDE plugins
 Plug 'airblade/vim-rooter'
@@ -43,6 +44,7 @@ call plug#end()
 "=================================================
 " Sets
 set number                        "Show the line numbers
+set signcolumn=auto:2             "Show two kind of symbols per line
 set relativenumber                "Show relative numbers in the line number side.
 set expandtab                     "Convert tab to space
 set tabstop=4                     "Number of space write by a tab
@@ -52,7 +54,7 @@ set hidden                        "Allows open tabs without safe the current one
 set noswapfile                    "No generate swap files
 set nobackup
 set nowritebackup
-set updatetime=300                "Longer time reduce the user experience
+set updatetime=50                 "Time to apply async operations
 set cmdheight=1                   "Space to displaying messages
 set shortmess+=c                  "Don't give ins-completion-menu messages
 set hlsearch                      "Highlight the search
