@@ -86,6 +86,7 @@ hi WildMenu ctermfg=232 ctermbg=98 cterm=none
 
 " Coc plugin
 hi CocFloating ctermbg=234
+hi CocUnusedHighlight ctermfg=246
 
 " Selection
 hi Visual ctermfg=none ctermbg=236
