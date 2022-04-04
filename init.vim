@@ -29,6 +29,7 @@ Plug 'pboettch/vim-cmake-syntax'
 Plug 'rust-lang/rust.vim'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'dart-lang/dart-vim-plugin'
+Plug 'neovimhaskell/haskell-vim'
 
 " Utilities
 Plug 'mattn/webapi-vim' "Used by :RustPlay
@@ -121,7 +122,7 @@ map <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " 2-size tab for other languages
-autocmd FileType html,pug,javascript,css,sass,vue,html.handlebars,dart,yaml setlocal sw=2 ts=2
+autocmd FileType html,pug,javascript,css,sass,vue,html.handlebars,dart,yaml,json setlocal sw=2 ts=2
 
 "=================================================
 "                 PLUGIN CONFIG
@@ -230,6 +231,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gt <Plug>(coc-codelens-action)
 
 " Find symbol of current document
 nnoremap <silent> <leader>o :CocList outline<cr>
