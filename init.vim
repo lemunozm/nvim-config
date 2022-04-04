@@ -191,6 +191,10 @@ let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
 
 "-------------------------------------------------
+" # markdown-preview
+let g:mkdp_auto_close = 0
+
+"-------------------------------------------------
 " # rust.vim
 let g:rustfmt_autosave = 1
 autocmd Filetype rust map <F8> :RustTest <CR>
