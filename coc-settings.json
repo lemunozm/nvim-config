@@ -15,17 +15,12 @@
         }
       }
     },
-    "rust-analyzer.server.path": "/home/luis/.local/bin/rust-analyzer",
     "rust-analyzer.diagnostics.enable": false,
-    "rust-analyzer.inlayHints.typeHints": false,
+    "rust-analyzer.inlayHints.typeHints.enable": false,
     "rust-analyzer.completion.postfix.enable": false,
-    "rust-analyzer.inlayHints.chainingHints": false,
+    "rust-analyzer.inlayHints.chainingHints.enable": false,
     "clangd.path": "/home/luis/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd",
-    "clangd.semanticHighlighting": true,
-    "coc.preferences.formatOnSaveFiletypes": [
-      "dart",
-      "haskell"
-    ],
+    "coc.preferences.formatOnSaveFiletypes": [ "dart", "haskell" ],
     "flutter.lsp.initialization.closingLabels": true,
     "diagnostic.virtualText": true,
     "codeLens.enable": true
